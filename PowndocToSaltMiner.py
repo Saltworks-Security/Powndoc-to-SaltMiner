@@ -148,7 +148,7 @@ for issue in issues:
     #either way we end up appending issue to file and exporting out 
     finally:
         data.append(jsonIssue)
-        with open('outputTest.json', 'w') as file:
+        with open('output.json', 'w') as file:
             json.dump(data, file, indent=4)
 
 
