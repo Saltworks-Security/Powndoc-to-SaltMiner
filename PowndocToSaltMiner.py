@@ -11,7 +11,7 @@ import json, re
 
 
 issues = {}
-pwnDocFile = 'YOUR PWNDOC FILE HERE' 
+pwnDocFile = 'YOUR FILE HERE' 
 
 
 ####------------------This Code makes the file 'outputTest.json for you to import into saltminer UI------------------####
@@ -29,6 +29,7 @@ with open(f"{pwnDocFile}", "r") as stream:
 
 
 for issue in issues:
+    print(issue)
     details = issue["details"][0]
 
     
@@ -126,7 +127,7 @@ for issue in issues:
     } 
     #trying to open existing file
     try:
-        with open('outputTest.json', 'r') as file:
+        with open('output.json', 'r') as file:
             data = json.load(file)
             file.seek(0)
 
@@ -135,11 +136,11 @@ for issue in issues:
 
     #if file not available writng a new file
     except:
-        with open('outputTest.json', 'w') as file:
+        with open('output.json', 'w') as file:
             base = '[]'
             file.write(base)
 
-        with open('outputTest.json', 'r') as file:
+        with open('output.json', 'r') as file:
             data = json.load(file)
             file.seek(0)
 
